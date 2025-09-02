@@ -50,13 +50,79 @@ plot(plot_data,
 #Problem 2
 
 ##Problem 2a
+```{r}
+library(ISwR)
+extractedAge <- stroke$age
+hist(extractedAge)
+```
+
 ##Problem 2b
+```{r}
+mybreaks <- seq(from = 0, to = 100, length.out = 7)
+hist(extractedAge,               #age data
+     breaks = mybreaks           #Set breaks to len 7
+     )
+```
+
 ##Problem 2c
+```{r}
+hist(extractedAge,               #age data
+     breaks = mybreaks,          #Set breaks to len 7
+     main = "Age Histogram")     #Change title
+```
+
 ##Problem 2d
+```{r}
+hist(extractedAge,               #age data
+     breaks = mybreaks,          #Set breaks to len 7
+     main = "Age Histogram",     #Change title
+     xlab = "Age when stroke occured"
+     )     
+```
+
 ##Problem 2e
+```{r}
+hist(extractedAge,               #age data
+     breaks = mybreaks,          #Set breaks to len 7
+     main = "Age Histogram",     #Change title
+     xlab = "Age when stroke occured",
+     col = "blue"
+     )     
+```
+
 ##Problem 2f
+```{r}
+myColors <- c("aquamarine","azure","chartreuse","cyan","cornsilk","coral")
+hist(extractedAge,               #age data
+     breaks = mybreaks,          #Set breaks to len 7
+     main = "Age Histogram",     #Change title
+     xlab = "Age when stroke occured",
+     col = myColors
+     )     
+```
+
 ##Problem 2g
+```{r}
+myColors <- seq(1,6)
+hist(extractedAge,               #age data
+     breaks = mybreaks,          #Set breaks to len 7
+     main = "Age Histogram",     #Change title
+     xlab = "Age when stroke occured",
+     col = myColors
+     )     
+```
+
 ##Problem 2h
+```{r}
+hist(extractedAge,               #age data
+     breaks = mybreaks,          #Set breaks to len 7
+     main = "Age Histogram",     #Change title
+     xlab = "Age when stroke occured",
+     col = myColors,
+     freq = FALSE
+     )     
+```
+
 
 
 #Problem 3
