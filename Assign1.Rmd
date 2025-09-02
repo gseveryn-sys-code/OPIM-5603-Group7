@@ -1,5 +1,5 @@
 ---
-title: "R Notebook"
+title: "OPIM5603 Assignment 1 Group 7"
 output: html_notebook
 ---
 
@@ -7,14 +7,32 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
 
-```{r}
-plot(cars)
-```
+#Problem 1
+Text
+##Problem 1.1a
+##Problem 1.1b
+##Problem 1.1c
+##Problem 1.1d
+##Problem 1.1e
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+##Problem 1.2a
+##Problem 1.2b
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+#Problem 2
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+##Problem 2a
+##Problem 2b
+##Problem 2c
+##Problem 2d
+##Problem 2e
+##Problem 2f
+##Problem 2g
+##Problem 2h
 
-#Hi there
+#Problem 3
+
+#Problem3a
+#Problem3b
+#Problem3c
+#Problem3d
+#Problem3e
