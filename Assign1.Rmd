@@ -7,16 +7,45 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
 
-#Problem 1
-Text
-##Problem 1.1a
-##Problem 1.1b
-##Problem 1.1c
-##Problem 1.1d
-##Problem 1.1e
+#Problem 1 
+##Problem 1.1a - create a variable and assign value of 35
+```{r}
+my_first_variable <- 35
+```
 
-##Problem 1.2a
-##Problem 1.2b
+##Problem 1.1b - divide 1st var by 9 and round to 3 sig figs
+```{r}
+my_second_variable <- signif(my_first_variable/9, 3)
+```
+
+##Problem 1.1c - print 2nd variable
+```{r}
+print(my_second_variable)
+```
+
+##Problem 1.1d - use floor() to round 2nd var to nearest int
+```{r}
+my_third_variable <- floor(my_second_variable)
+```
+
+##Problem 1.1e - print 3rd variable
+```{r}
+print(my_third_variable)
+```
+
+##Problem 1.2a - set seed for reproducability
+```{r}
+set.seed(8675309)
+```
+
+##Problem 1.2b - plot data from norm dist, mean 500, sd 10
+```{r}
+plot_data <- rnorm(20, mean=500, sd=10)
+plot(plot_data,
+     ylab = "Value",            # Y-axis label
+     main = "Random Sample Norm Dist, Mean = 500 & SD = 10"  # Title
+     )
+```
 
 #Problem 2
 
@@ -29,10 +58,10 @@ Text
 ##Problem 2g
 ##Problem 2h
 
-#Problem 3
 
-#Problem3a
-#Problem3b
-#Problem3c
-#Problem3d
-#Problem3e
+#Problem 3
+##Problem3a
+##Problem3b
+##Problem3c
+##Problem3d
+##Problem3e
