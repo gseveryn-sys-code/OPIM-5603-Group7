@@ -127,7 +127,48 @@ hist(extractedAge,               #age data
 
 #Problem 3
 ##Problem3a
+```{r}
+library(ISwR)
+
+extractedComa <- stroke$coma
+ComaColumns <- extractedComa[c(759,760,761)]
+
+cat("Print the values of the coma column in index positions 759, 760, and 761:")
+print(ComaColumns) #print values in coma column in index 759, 760, and 761
+
+cat("Print if the above values are NA:")
+is.na(ComaColumns) #print if values in coma column in index 759, 760, and 761 are equal to NA. TRUE means value is NA. FALSE means not NA
+cat("\nThe values in position 759 and 761 are not NA. The value in 780 is NA.")
+```
+
 ##Problem3b
+```{r}
+table(stroke$coma,stroke$diab) #adding all combinations is 816, coma is rows and diab is columns
+```
+```{r}
+length(stroke$coma) #length is 829 due to how NA values are used
+```
+
 ##Problem3c
+```{r}
+myFirstTable <- table(stroke$coma,stroke$diab, useNA="always")
+print(myFirstTable) #nopw the number of observations is 829, sum of all numbers and matches the length of stroke$coma
+```
+
 ##Problem3d
+```{r}
+cat("Table with answers a little too exact:")
+prop.table(myFirstTable) #answers too exact
+cat("\nRound answers to 3 decimal places:")
+round(prop.table(myFirstTable),3)
+```
+
 ##Problem3e
+```{r}
+print("2nd argumenet as 1:")
+round(prop.table(myFirstTable,1),3) #setting 2nd argument to 1, sum of each row proportion = 1
+
+cat("\n2nd argumenet as 2:")
+round(prop.table(myFirstTable,2),3) #setting 2nd argument to 2, sum of each column proportion = 1
+```
+
