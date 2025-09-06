@@ -1,47 +1,51 @@
 ---
 title: "OPIM5603 Assignment 1 Group 7"
-output: html_notebook
+author: "Grant Severyn, Emi Erekosima, Sean Biggs"
+date: "9/7/2025"
+output:
+  html_notebook:
+    toc: true
+    toc_depth: 2
 ---
+
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
-Emi Erekosima
 
-Sean Biggs
 
-#Problem 1 
-##Problem 1.1a - create a variable and assign value of 35
+# Problem 1 
+## Problem 1.1a - create a variable and assign value of 35
 ```{r}
 my_first_variable <- 35
 ```
 
-##Problem 1.1b - divide 1st var by 9 and round to 3 sig figs
+## Problem 1.1b - divide 1st var by 9 and round to 3 sig figs
 ```{r}
 my_second_variable <- signif(my_first_variable/9, 3)
 ```
 
-##Problem 1.1c - print 2nd variable
+## Problem 1.1c - print 2nd variable
 ```{r}
 print(my_second_variable)
 ```
 
-##Problem 1.1d - use floor() to round 2nd var to nearest int
+## Problem 1.1d - use floor() to round 2nd var to nearest int
 ```{r}
 my_third_variable <- floor(my_second_variable)
 ```
 
-##Problem 1.1e - print 3rd variable
+## Problem 1.1e - print 3rd variable
 ```{r}
 print(my_third_variable)
 ```
 
-##Problem 1.2a - set seed for reproducability
+## Problem 1.2a - set seed for reproducability
 ```{r}
 set.seed(8675309)
 ```
 
-##Problem 1.2b - plot data from norm dist, mean 500, sd 10
+## Problem 1.2b - plot data from norm dist, mean 500, sd 10
 ```{r}
 plot_data <- rnorm(20, mean=500, sd=10)
 plot(plot_data,
@@ -50,16 +54,16 @@ plot(plot_data,
      )
 ```
 
-#Problem 2
+# Problem 2
 
-##Problem 2a
+## Problem 2a
 ```{r}
 library(ISwR)
 extractedAge <- stroke$age
 hist(extractedAge)
 ```
 
-##Problem 2b
+## Problem 2b
 ```{r}
 mybreaks <- seq(from = 0, to = 100, length.out = 7)
 hist(extractedAge,               #age data
@@ -67,14 +71,14 @@ hist(extractedAge,               #age data
      )
 ```
 
-##Problem 2c
+## Problem 2c
 ```{r}
 hist(extractedAge,               #age data
      breaks = mybreaks,          #Set breaks to len 7
      main = "Age Histogram")     #Change title
 ```
 
-##Problem 2d
+## Problem 2d
 ```{r}
 hist(extractedAge,               #age data
      breaks = mybreaks,          #Set breaks to len 7
@@ -83,7 +87,7 @@ hist(extractedAge,               #age data
      )     
 ```
 
-##Problem 2e
+## Problem 2e
 ```{r}
 hist(extractedAge,               #age data
      breaks = mybreaks,          #Set breaks to len 7
@@ -93,7 +97,7 @@ hist(extractedAge,               #age data
      )     
 ```
 
-##Problem 2f
+## Problem 2f
 ```{r}
 myColors <- c("aquamarine","azure","chartreuse","cyan","cornsilk","coral")
 hist(extractedAge,               #age data
@@ -104,7 +108,7 @@ hist(extractedAge,               #age data
      )     
 ```
 
-##Problem 2g
+## Problem 2g
 ```{r}
 myColors <- seq(1,6)
 hist(extractedAge,               #age data
@@ -115,7 +119,7 @@ hist(extractedAge,               #age data
      )     
 ```
 
-##Problem 2h
+## Problem 2h
 ```{r}
 hist(extractedAge,               #age data
      breaks = mybreaks,          #Set breaks to len 7
@@ -128,8 +132,8 @@ hist(extractedAge,               #age data
 
 
 
-#Problem 3
-##Problem3a
+# Problem 3
+## Problem3a
 ```{r}
 library(ISwR)
 
@@ -144,7 +148,7 @@ is.na(ComaColumns) #print if values in coma column in index 759, 760, and 761 ar
 cat("\nThe values in position 759 and 761 are not NA. The value in 780 is NA.")
 ```
 
-##Problem3b
+## Problem3b
 ```{r}
 table(stroke$coma,stroke$diab) #adding all combinations is 816, coma is rows and diab is columns
 ```
@@ -152,13 +156,13 @@ table(stroke$coma,stroke$diab) #adding all combinations is 816, coma is rows and
 length(stroke$coma) #length is 829 due to how NA values are used
 ```
 
-##Problem3c
+## Problem3c
 ```{r}
 myFirstTable <- table(stroke$coma,stroke$diab, useNA="always")
 print(myFirstTable) #nopw the number of observations is 829, sum of all numbers and matches the length of stroke$coma
 ```
 
-##Problem3d
+## Problem3d
 ```{r}
 cat("Table with answers a little too exact:")
 prop.table(myFirstTable) #answers too exact
@@ -166,7 +170,7 @@ cat("\nRound answers to 3 decimal places:")
 round(prop.table(myFirstTable),3)
 ```
 
-##Problem3e
+## Problem3e
 ```{r}
 print("2nd argumenet as 1:")
 round(prop.table(myFirstTable,1),3) #setting 2nd argument to 1, sum of each row proportion = 1
