@@ -3,7 +3,7 @@ title: "OPIM5603 Assignment 1 Group 7"
 author: "Grant Severyn, Emi Erekosima, Sean Biggs"
 date: "9/7/2025"
 output:
-  html_notebook:
+  html_document:
     toc: true
     toc_depth: 2
 ---
