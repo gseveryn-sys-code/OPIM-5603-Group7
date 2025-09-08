@@ -7,6 +7,7 @@ output:
     toc: true
     toc_depth: 2
 ---
+Generic R Notebook Description:
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
@@ -21,6 +22,8 @@ Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by press
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
 
 The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+--
 
 #Problem 1 (Sean)
 In a certain town the probability that a randomly chosen woman has some allergy is 1/3, the prob
