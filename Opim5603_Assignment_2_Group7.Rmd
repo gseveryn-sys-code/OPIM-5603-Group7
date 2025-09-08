@@ -1,0 +1,90 @@
+---
+title: "OPIM5603 Assignment 2 Group 7"
+author: "Emi Erekosima, Sean Biggs, Grant Severyn"
+date: "9/14/2025"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+#Problem 1 (Sean)
+In a certain town the probability that a randomly chosen woman has some allergy is 1/3, the prob
+ability that a randomly chosen man has some allergy is 1/5. Suppose that the probability that a randomly chosen person is a woman is equal to 1/2. For the following problems, define events carefully and show all steps.
+
+##Problem 1a
+What is the probability that a randomly chosen person has some allergy?
+
+##Problem 1b
+Suppose a person in the community is chosen at random and has some allergy. What is the chance this person is a woman?
+
+##Problem 1c
+Suppose now that the probability that a randomly chosen person is a woman is equal to 2/3
+ and the other values remain the same; what is the new probability that a randomly chosen
+ person has some allergy?
+
+#Problem 2 (Sean)
+In a company 80% of the customers are classified as having “good” credit and the rest as having
+ “risky” credit depending on their credit rating. 60% of the accounts in the ‘risky” category are
+ overdue, whereas only 15% of the accounts in the good” category are overdue. For the following
+ problems, define events carefully and show all steps.
+
+##Problem 2a
+What percentage of overdue accounts are held by customers in the “risky” credit category?
+
+##Problem 2b
+What percentage of non-overdue accounts are held by customers in the “good” credit” category?
+
+#Problem 3 (Grant)
+ According to a survey, the fraction of the population which likes science-fiction movies is 0.2 and
+ the fraction of the population which likes role-playing games is 0.1. Also, the proportion of people
+ who are not interested in science-fiction movies and are also not interested in role-playing games is
+ 0.75. For the following problems, define events carefully and show all steps.
+ 
+##Problem 3a
+What is the probability that a person likes both science-fiction movies and role-playing games?
+
+##Problem 3b
+What is the conditional probability that a person likes science-fiction movies given that (s)he
+ like role-playing games?
+
+##Problem 3c
+Are the events liking science-fiction and liking role-playing games independent?
+
+#Problem 4 (Emi)
+ In this problem you will be creating two functions, which take as argument a vector of values, and
+ returns the geometric mean of those numbers. Recall from class that because the calculation of
+ the geometric mean requires the multiplication of a set of numbers, it is highly unstable to simply
+ multiply the numbers together, and then take the nth root. Alternatively, you can take the log of
+ every number, then take the mean of those numbers, and finally take e raised to that power.
+
+##Problem4a
+ Create a function called unstableGeoMean, which takes as argument a vector of values, and
+ returns the geometric mean, using the standard formula which is the nth root of the product
+ of the values in the vector.
+ 
+##Problem 4b
+Create another function called stableGeoMean, which takes as argument a vector of values,
+ and return the geometric mean, using the log and exponential transformation described above.
+
+##Problem4c
+Test the validity of your functions by creating a vector called x.10 which contains the numbers
+ 1 through 10, and see that both functions print the same value.
+
+##Problem 4d
+What happens if you define a vector called x.1000, which contains the numbers 1 through
+ 1000, and apply both functions? Explain.
