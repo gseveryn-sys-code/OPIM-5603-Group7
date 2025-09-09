@@ -25,32 +25,84 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 
 --
 
-#Problem 1 (Sean)
+# Problem 1
 In a certain town the probability that a randomly chosen woman has some allergy is 1/3, the prob
 ability that a randomly chosen man has some allergy is 1/5. Suppose that the probability that a randomly chosen person is a woman is equal to 1/2. For the following problems, define events carefully and show all steps.
 
-##Problem 1a
+## Problem 1a
 What is the probability that a randomly chosen person has some allergy?
+```{r}
+p_woman <- 1/2         #Probability chosen is woman
+p_woman_allergy <- 1/3 #Probability chosen woman has an allergy
+p_man_allergy <- 1/5   #Probability chosen man has an allergy
 
-##Problem 1b
+p_allergy <- p_woman * p_woman_allergy + (1 - p_woman) * p_man_allergy  #Probability the chosen has an allergy
+p_allergy
+
+```
+
+
+## Problem 1b
 Suppose a person in the community is chosen at random and has some allergy. What is the chance this person is a woman?
+```{r}
+p_allergy <- p_woman * p_woman_allergy + (1 - p_woman) * p_man_allergy #Probability the chosen has an allergy
 
-##Problem 1c
+p_woman_given_allergy <- (p_woman_allergy * p_woman) / p_allergy #Probability chosen is a woman with an allergy
+p_woman_given_allergy
+```
+
+
+## Problem 1c
 Suppose now that the probability that a randomly chosen person is a woman is equal to 2/3
  and the other values remain the same; what is the new probability that a randomly chosen
  person has some allergy?
+```{r}
+p_woman <- 2/3         #Probability chosen is woman
+p_woman_allergy <- 1/3 #Probability chosen woman has an allergy
+p_man_allergy <- 1/5   #Probability chosen man has an allergy
 
-#Problem 2 (Sean)
+p_allergy <- p_woman * p_woman_allergy + (1 - p_woman) * p_man_allergy  #Probability the chosen has an allergy
+
+p_woman_given_allergy <- (p_woman_allergy * p_woman) / p_allergy  #Probability the chosen is a woman with an allergy
+p_woman_given_allergy
+
+
+```
+ 
+
+# Problem 2
 In a company 80% of the customers are classified as having “good” credit and the rest as having
  “risky” credit depending on their credit rating. 60% of the accounts in the ‘risky” category are
  overdue, whereas only 15% of the accounts in the good” category are overdue. For the following
  problems, define events carefully and show all steps.
-
-##Problem 2a
+ 
+## Problem 2a
 What percentage of overdue accounts are held by customers in the “risky” credit category?
+```{r}
+p_good <- 0.8          #Probability customer has good credit
+p_risky <- 1 - p_good  #Probability customer has risky credit
+p_overdue_given_good <- 0.15  #Probability account is overdue given good credit
+p_overdue_given_risky <- 0.6   #Probability account is overdue given risky credit
 
-##Problem 2b
+p_overdue <- (p_overdue_given_good * p_good) + (p_overdue_given_risky * p_risky) #Total probability account is overdue
+p_risky_given_overdue <- (p_overdue_given_risky * p_risky) / p_overdue #Probability account is risky and overdue
+p_risky_given_overdue
+
+```
+
+
+## Problem 2b
 What percentage of non-overdue accounts are held by customers in the “good” credit” category?
+```{r}
+p_not_overdue_given_good <- 1 - p_overdue_given_good   #Probability account is not overdue given good credit
+p_not_overdue_given_risky <- 1 - p_overdue_given_risky #Probability account is not overdue given risky credit
+
+p_not_overdue <- (p_not_overdue_given_good * p_good) + (p_not_overdue_given_risky * p_risky) #Total probability account is not overdue
+p_good_given_not_overdue <- (p_not_overdue_given_good * p_good) / p_not_overdue #Probability account is good and not overdue
+
+p_good_given_not_overdue
+```
+
 
 #Problem 3 (Grant)
  According to a survey, the fraction of the population which likes science-fiction movies is 0.2 and
