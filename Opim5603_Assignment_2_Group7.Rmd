@@ -113,12 +113,106 @@ p_good_given_not_overdue
 ##Problem 3a
 What is the probability that a person likes both science-fiction movies and role-playing games?
 
+Define A = liking science fiction movies
+Define B = liking role playing games
+
+Given P(A) = 0.1, P(B) = 0.2, and P(A' ∩ B') = 0.75 we can construct a contingency table, solving system of eq
+
+P(A) = P(A ∩ B) + P(A ∩ B') = 0.1
+P(B) = P(A ∩ B) + P(A' ∩ B) = 0.2
+P(A') = 1 - P(A) = 0.9
+P(B') = 1- P(B) = 0.8
+
+Given P(A' ∩ B')=0.75 we can find P(A' ∩ B) and P(A ∩ B')
+(A' ∩ B) = P(A') - P(A' ∩ B') = 0.9-0.75= 0.15
+P(A ∩ B') = P(B') - P(A' ∩ B') = 0.8 - 0.75 = 0.05
+
+Finally we can calculate 
+P(A ∩ B) = P(A) - P(A ∩ B') = 0.1 - 0.05 = 0.05
+
+Probability that someone likes both science=fiction and role-playing games = 0.05
+
+```{r}
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Define joint probabilities from above
+joint_probs <- matrix(c(
+  0.05,  # A ∩ B
+  0.05,  # A ∩ B'
+  0.15,  # A' ∩ B
+  0.75   # A' ∩ B'
+), nrow = 2, byrow = TRUE)
+
+# Assign row and column names
+dimnames(joint_probs) <- list(
+  A = c("A", "A'"),
+  B = c("B", "B'")
+)
+
+# Convert to data frame for ggplot
+df <- as.data.frame(as.table(joint_probs))
+colnames(df) <- c("A", "B", "Probability")
+
+# Compute marginal totals
+row_marginals <- df %>%
+  group_by(A) %>%
+  summarise(RowTotal = sum(Probability))
+
+col_marginals <- df %>%
+  group_by(B) %>%
+  summarise(ColTotal = sum(Probability))
+
+# Print contingency table with marginals
+print("Contingency Table with Marginals:")
+print(df)
+print("Row Marginals:")
+print(row_marginals)
+print("Column Marginals:")
+print(col_marginals)
+
+# Visualize with ggplot2
+ggplot(df, aes(x = B, y = A, fill = Probability)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = round(Probability, 2)), size = 5) +
+  scale_fill_gradient(low = "lightblue", high = "darkblue") +
+  labs(title = "Joint Probability Heatmap", x = "Event B", y = "Event A") +
+  theme_minimal()
+
+
+```
+
+
 ##Problem 3b
 What is the conditional probability that a person likes science-fiction movies given that (s)he
  like role-playing games?
+ 
+ From the analysis above, the probability that a person likes science fiction movies given they like role playing games
+ P(A|B)= P(A ∩ B)/P(B) = 0.05/0.2 = 0.25 or 25%
+ 
+```{r}
+pAgivenB <- joint_probs[1,1]/(joint_probs[1,1]+joint_probs[2,1])
+print(pAgivenB)
+```
+ 
 
 ##Problem 3c
 Are the events liking science-fiction and liking role-playing games independent?
+
+By definition, A and B are independent if P(A|B) = P(A) where P(A|B) is the conditional probability of A given B and 
+P(A) is the marginal probability of A (pg. 164)
+
+In part b we found P(A|B) was 0.25 which is not equal to P(A) given as 0.1
+Therefore, liking science-fiction movies and liking role-playing games are not independent
+```{r}
+pA <- 0.1
+if(pAgivenB != pA){
+  print("Liking science fiction movies and role playing games are not independent")
+}
+```
+
 
 #Problem 4 (Emi)
  In this problem you will be creating two functions, which take as argument a vector of values, and
