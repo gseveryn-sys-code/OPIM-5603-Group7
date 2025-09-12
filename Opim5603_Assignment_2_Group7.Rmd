@@ -227,8 +227,10 @@ if(pAgivenB != pA){
  of the values in the vector.
 ```{r}
 unstableGeoMean <- function(x, na.rm = FALSE) {
-  if (na.rm == TRUE) {
-    x <- x[which(!is.na(x))] # removes the NAs
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  } else if (anyNA(x)) {
+    stop("x contains NA; set na.rm = TRUE to drop them.")# removes the NAs
   }
   if (any(x < 0)) stop("Geometric mean is undefined for negatives.")
   if (any(x == 0)) return(0)
@@ -241,11 +243,43 @@ unstableGeoMean <- function(x, na.rm = FALSE) {
 ##Problem 4b
 Create another function called stableGeoMean, which takes as argument a vector of values,
  and return the geometric mean, using the log and exponential transformation described above.
+```{r}
+stableGeoMean <- function(x, na.rm = FALSE) {
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  } else if (anyNA(x)) {
+    stop("x contains NA; set na.rm = TRUE to drop them.") # removes the NAs
+  }
+  if (any(x < 0)) stop("Geometric mean is undefined for negatives.")
+  if (any(x == 0)) return(0)
+  exp(mean(log(x)))
+}
+```
+
 
 ##Problem4c
 Test the validity of your functions by creating a vector called x.10 which contains the numbers
  1 through 10, and see that both functions print the same value.
+```{r}
+x.10 <- 1:10
+unstable <- unstableGeoMean(x.10)
+stable <- stableGeoMean(x.10)
+
+print(unstable)
+print(stable)
+```
+ 
 
 ##Problem 4d
 What happens if you define a vector called x.1000, which contains the numbers 1 through
  1000, and apply both functions? Explain.
+```{r}
+x.1000 <- 1:1000
+largeUnstable <- unstableGeoMean(x.1000)
+largeStable <- stableGeoMean(x.1000)
+
+print(largeUnstable)
+print(largeStable)
+```
+ 
+ 
