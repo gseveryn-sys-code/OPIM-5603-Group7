@@ -280,6 +280,8 @@ largeStable <- stableGeoMean(x.1000)
 
 print(largeUnstable)
 print(largeStable)
+
+# Computers store numbers with limited range so for the unstable geometric mean it becomes inf before we are able to take the root. Summing logs stays within range of computer memory.
 ```
  
  
