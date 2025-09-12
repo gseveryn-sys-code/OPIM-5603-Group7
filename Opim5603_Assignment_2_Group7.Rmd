@@ -225,6 +225,18 @@ if(pAgivenB != pA){
  Create a function called unstableGeoMean, which takes as argument a vector of values, and
  returns the geometric mean, using the standard formula which is the nth root of the product
  of the values in the vector.
+```{r}
+unstableGeoMean <- function(x, na.rm = FALSE) {
+  if (na.rm == TRUE) {
+    x <- x[which(!is.na(x))] # removes the NAs
+  }
+  if (any(x < 0)) stop("Geometric mean is undefined for negatives.")
+  if (any(x == 0)) return(0)
+  n <- length(x)
+  (prod(x))^(1 / n)
+}
+```
+ 
  
 ##Problem 4b
 Create another function called stableGeoMean, which takes as argument a vector of values,
