@@ -104,7 +104,7 @@ p_good_given_not_overdue
 ```
 
 
-#Problem 3 (Grant)
+#Problem 3
  According to a survey, the fraction of the population which likes science-fiction movies is 0.2 and
  the fraction of the population which likes role-playing games is 0.1. Also, the proportion of people
  who are not interested in science-fiction movies and are also not interested in role-playing games is
@@ -228,7 +228,7 @@ if(pAgivenB != pA){
 ```
 
 
-#Problem 4 (Emi)
+#Problem 4
  In this problem you will be creating two functions, which take as argument a vector of values, and
  returns the geometric mean of those numbers. Recall from class that because the calculation of
  the geometric mean requires the multiplication of a set of numbers, it is highly unstable to simply
