@@ -104,13 +104,13 @@ p_good_given_not_overdue
 ```
 
 
-#Problem 3
+# Problem 3
  According to a survey, the fraction of the population which likes science-fiction movies is 0.2 and
  the fraction of the population which likes role-playing games is 0.1. Also, the proportion of people
  who are not interested in science-fiction movies and are also not interested in role-playing games is
  0.75. For the following problems, define events carefully and show all steps.
  
-##Problem 3a
+## Problem 3a
 What is the probability that a person likes both science-fiction movies and role-playing games?
 
 Define A = liking science fiction (SC) movies
@@ -199,7 +199,7 @@ p_SF_and_RP
 ```
 
 
-##Problem 3b
+## Problem 3b
 What is the conditional probability that a person likes science-fiction movies given that (s)he
  like role-playing games?
  
@@ -212,7 +212,7 @@ print(pAgivenB)
 ```
  
 
-##Problem 3c
+## Problem 3c
 Are the events liking science-fiction and liking role-playing games independent?
 
 By definition, A and B are independent if P(A|B) = P(A) where P(A|B) is the conditional probability of A given B and 
@@ -228,14 +228,14 @@ if(pAgivenB != pA){
 ```
 
 
-#Problem 4
+# Problem 4
  In this problem you will be creating two functions, which take as argument a vector of values, and
  returns the geometric mean of those numbers. Recall from class that because the calculation of
  the geometric mean requires the multiplication of a set of numbers, it is highly unstable to simply
  multiply the numbers together, and then take the nth root. Alternatively, you can take the log of
  every number, then take the mean of those numbers, and finally take e raised to that power.
 
-##Problem4a
+## Problem4a
  Create a function called unstableGeoMean, which takes as argument a vector of values, and
  returns the geometric mean, using the standard formula which is the nth root of the product
  of the values in the vector.
@@ -254,7 +254,7 @@ unstableGeoMean <- function(x, na.rm = FALSE) {
 ```
  
  
-##Problem 4b
+## Problem 4b
 Create another function called stableGeoMean, which takes as argument a vector of values,
  and return the geometric mean, using the log and exponential transformation described above.
 ```{r}
@@ -271,7 +271,7 @@ stableGeoMean <- function(x, na.rm = FALSE) {
 ```
 
 
-##Problem4c
+## Problem4c
 Test the validity of your functions by creating a vector called x.10 which contains the numbers
  1 through 10, and see that both functions print the same value.
 ```{r}
@@ -284,7 +284,7 @@ print(stable)
 ```
  
 
-##Problem 4d
+## Problem 4d
 What happens if you define a vector called x.1000, which contains the numbers 1 through
  1000, and apply both functions? Explain.
 ```{r}
