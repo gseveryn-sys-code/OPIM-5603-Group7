@@ -1,0 +1,87 @@
+---
+title: "OPIM5603 Assignment 3 Group 7"
+author: "Emi Erekosima, Sean Biggs, Grant Severyn"
+date: "9/21/2025"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+--
+# Problem 1
+ Imagine you are the manager of an engineering company and there is a project that you want to bid on. Your civil engineering group tells you that the fixed costs for this project are 500,000 dollars, and that there are also additional design costs of 6,000 dollars per day and construction costs of 5,000 dollars per day. The number of days estimated for completion of the project falls between 15 and 21 days as shown in the given table.
+ 
+## Problem 1(a)
+ Let X be the number of days it takes to complete an upcoming project. Create vector
+xValues which stores the values that X can take which have positive probability, and a
+vector pmfValues, which, in each coordinate, stores the associated probabilities of the values appearing in xValues.
+ 
+## Problem 1(b)
+What is the probability that the number of days it takes to complete an upcoming project is greater than or equal to 18?
+ 
+## Problem 1(c)
+What is the expected value of X?
+ 
+## Problem 1(d)
+What is the variance of X?
+ 
+--
+# Problem 2
+As a purchasing agent, you are responsible for selecting sources of supply for manufactured components to use in your firm’s production process. The salesman for a certain supplier indicates that the supplier can supply an electronic sub-assembly that has an average defect rate of 2 per 100—well below your current supplier’s defect rate. You accept 100 sub-assemblies for evaluation, and find that there were 6 defects.
+ 
+## Problem 2(a)
+What is the probability of finding exactly 6 defects in a batch of 100 sub-assemblies assuming an average defect rate of 2 per 100?
+ 
+## Problem 2(b)
+What is the probability of finding at least 6 defects in a batch of 100 sub-assemblies assuming an average defect rate of 2 per 100?
+ 
+## Problem 2(c)
+What is the probability of finding at most 3 defects in a batch of 100 sub-assemblies assuming an average defect rate of 2 per 100?
+ 
+## Problem 2(d)
+Repeat the first three parts of this problem assuming that the average defect rate is 6 per 100.
+
+--
+# Problem 3
+ The local police department must write, on average, five tickets a day to keep department revenues at budgeted levels. Suppose the number of tickets written per day follows a Poisson distribution with a mean of 6.4 tickets per day.
+ 
+## Problem 3(a)
+ Find the probability that less than 6 tickets are written on a randomly selected day from this population.
+ 
+## Problem 3(b)
+Find the probability that exactly 6 tickets are written on a randomly selected day from this population.
+ 
+## Problem 3(c)
+ Find the probability that less than six but more significant than three tickets are written from this population on a randomly selected day
+
+--
+# Problem 4
+ The exponential distribution is a continuous distribution, often used to model the length of time between two occurrences of an event (the time between arrivals). The PDF of the distribution is given.
+ 
+  There is a single parameter to this distribution, λ, which is the rate of arrival per time period. For example, if trucks arrive to a toll booth at a rate of 10 trucks per minute, then we can model the time between the arrival of consecutive trucks as an exponential random variable with λ = 10. For this distribution, the mean µ is 1
+λ and the standard deviation σ is 1 / λ. 
+  R has the following four functions that can be used to calculate probabilities associated with randomly variables that are exponentially distribution: dexp(x, rate = 1, log = FALSE), pexp(q, rate = 1, lower.tail = TRUE, log.p = FALSE),qexp(p, rate = 1, lower.tail = TRUE, log.p = FALSE), and rexp(n, rate = 1), with interpretations similar to those that we have seen in class for other continuous distributions. Namely, dexp calculates the value of the PDF at a particular value, pexp calculates the CDF at a particular value, qexp calculates percentiles, and rexp samples from the distribution
+ 
+## Problem 4(a)
+ Ac ommon use of the exponential distribution is to model the lifetime of a light bulb. Suppose that the lifetime of a light bulb is exponentially distribution with mean µ = 5 years. Define a random variable for the lifetime of a single light bulb, and find the probability that the lifetime of a light bulb is more than 7 years
+ 
+## Problem 4(b)
+ Find the probability that the lifetime of a light bulb is more than 4 years.
+ 
+## Problem 4(c)
+Suppose that a light bulb has lasted for 6 years. What is the probability that its remaining lifetime is more than 4 years?
