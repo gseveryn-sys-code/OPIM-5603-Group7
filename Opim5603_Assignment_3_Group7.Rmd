@@ -30,15 +30,34 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
  Let X be the number of days it takes to complete an upcoming project. Create vector
 xValues which stores the values that X can take which have positive probability, and a
 vector pmfValues, which, in each coordinate, stores the associated probabilities of the values appearing in xValues.
+```{r}
+xValues <- c(seq(15, 21, 1))
+pmfValues <- c(0.1, 0.15, 0.2, 0.2, 0.15, 0.1, 0.1)
+```
  
 ## Problem 1(b)
 What is the probability that the number of days it takes to complete an upcoming project is greater than or equal to 18?
+```{r}
+more_than_18_days <- sum(pmfValues[4:7])
+more_than_18_days
+```
+
  
 ## Problem 1(c)
 What is the expected value of X?
+```{r}
+expected_value <- sum(xValues * pmfValues)
+expected_value
+```
+
  
 ## Problem 1(d)
 What is the variance of X?
+```{r}
+variance <- sum((xValues-expected_value)^2*pmfValues)
+variance
+```
+
  
 --
 # Problem 2
@@ -46,15 +65,47 @@ As a purchasing agent, you are responsible for selecting sources of supply for m
  
 ## Problem 2(a)
 What is the probability of finding exactly 6 defects in a batch of 100 sub-assemblies assuming an average defect rate of 2 per 100?
+
+P(Y=6)
+```{r}
+defects2a <- dbinom(x=6, size=100, prob=0.02)
+defects2a
+```
+
  
 ## Problem 2(b)
 What is the probability of finding at least 6 defects in a batch of 100 sub-assemblies assuming an average defect rate of 2 per 100?
+P(Y>=6)
+```{r}
+defects2b <-1-pbinom(5,size=100,prob=0.02)
+defects2b
+```
+
  
 ## Problem 2(c)
 What is the probability of finding at most 3 defects in a batch of 100 sub-assemblies assuming an average defect rate of 2 per 100?
+```{r}
+defects2c <-pbinom(3,size=100,prob=0.02)
+defects2c
+```
+
  
 ## Problem 2(d)
 Repeat the first three parts of this problem assuming that the average defect rate is 6 per 100.
+```{r}
+NewDefects2a <- dbinom(6,size=100,prob=0.06) #exactly 6 defects, w/ avg 6 defects/100
+answer1 <- paste("Rerunning problem 2a, exactly 6 defects prob = 0.06:",NewDefects2a)
+print(answer1)
+
+NewDefects2b <-1-pbinom(5,size=100,prob=0.06) #at least 6 defects, w/ avg 6 defects/100
+answer2 <- paste("Rerunning problem 2b, at least 6 defects prob = 0.06:",NewDefects2b)
+print(answer2)
+
+NewDefects2c <-pbinom(3,size=100,prob=0.06) #at most 3 defects, w/ avg 6 defects/100
+answer3 <- paste("Rerunning problem 2c, at most 3 defects prob = 0.06:",NewDefects2c)
+print(answer3)
+```
+
 
 --
 # Problem 3
