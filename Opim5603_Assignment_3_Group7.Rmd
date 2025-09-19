@@ -132,6 +132,8 @@ prob4 <- dpois(4, lambda)
 prob5 <- dpois(5, lambda)
 probBetween <- prob4 + prob5
 cat("The probability that the number of tikets given is less than 6 but more than 3 is", probBetween)
+# another calc probBetween2 <- ppois(5, lambda) - ppois(3, lambda)
+# another calc where ppois is inclusive
 ```
 --
 # Problem 4
