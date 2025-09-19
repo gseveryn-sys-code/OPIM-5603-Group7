@@ -130,9 +130,33 @@ Find the probability that exactly 6 tickets are written on a randomly selected d
  
 ## Problem 4(a)
  Ac ommon use of the exponential distribution is to model the lifetime of a light bulb. Suppose that the lifetime of a light bulb is exponentially distribution with mean µ = 5 years. Define a random variable for the lifetime of a single light bulb, and find the probability that the lifetime of a light bulb is more than 7 years
+```{r}
+lambda <- 1/5
+x <- 7
+
+p_greater_than_7 <-  pexp(q = x, rate = lambda, lower.tail = FALSE)
+p_greater_than_7
+```
+ 
  
 ## Problem 4(b)
  Find the probability that the lifetime of a light bulb is more than 4 years.
+
+```{r}
+lambda <- 1/5
+x <- 4
+
+p_greater_than_4 <-  pexp(q = x, rate = lambda, lower.tail = FALSE)
+p_greater_than_4
+```
+ 
  
 ## Problem 4(c)
 Suppose that a light bulb has lasted for 6 years. What is the probability that its remaining lifetime is more than 4 years?
+```{r}
+lambda <- 1/5
+p_remaining_greater_than_4 <- pexp(q = 10, rate = lambda, lower.tail = FALSE) /
+  pexp(q = 6, rate = lambda, lower.tail = FALSE)
+p_remaining_greater_than_4
+```
+
