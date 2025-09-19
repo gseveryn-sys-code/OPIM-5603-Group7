@@ -113,7 +113,7 @@ print(answer3)
  
 ## Problem 3(a)
  Find the probability that less than 6 tickets are written on a randomly selected day from this population.
- ```{r}
+```{r}
 lambda <- 6.4
 probLessThan6 <- ppois(5, lambda) # calculates the prob when x is less than or equal to 5
 cat("The probability that the number of tickets given on a random day is less than 6 is", probLessThan6, "\n")
