@@ -33,6 +33,8 @@ vector pmfValues, which, in each coordinate, stores the associated probabilities
 ```{r}
 xValues <- c(seq(15, 21, 1))
 pmfValues <- c(0.1, 0.15, 0.2, 0.2, 0.15, 0.1, 0.1)
+xValues
+pmfValues
 ```
  
 ## Problem 1(b)
@@ -144,7 +146,7 @@ cat("The probability that the number of tikets given is less than 6 but more tha
   R has the following four functions that can be used to calculate probabilities associated with randomly variables that are exponentially distribution: dexp(x, rate = 1, log = FALSE), pexp(q, rate = 1, lower.tail = TRUE, log.p = FALSE),qexp(p, rate = 1, lower.tail = TRUE, log.p = FALSE), and rexp(n, rate = 1), with interpretations similar to those that we have seen in class for other continuous distributions. Namely, dexp calculates the value of the PDF at a particular value, pexp calculates the CDF at a particular value, qexp calculates percentiles, and rexp samples from the distribution
  
 ## Problem 4(a)
- Ac ommon use of the exponential distribution is to model the lifetime of a light bulb. Suppose that the lifetime of a light bulb is exponentially distribution with mean µ = 5 years. Define a random variable for the lifetime of a single light bulb, and find the probability that the lifetime of a light bulb is more than 7 years
+ A common use of the exponential distribution is to model the lifetime of a light bulb. Suppose that the lifetime of a light bulb is exponentially distribution with mean µ = 5 years. Define a random variable for the lifetime of a single light bulb, and find the probability that the lifetime of a light bulb is more than 7 years
 ```{r}
 lambda <- 1/5
 x <- 7
